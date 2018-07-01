@@ -4,12 +4,12 @@ class Squares
   end
 
   def square_of_sum
-    square = (1..@num).sum**2
+    (1..@num).sum**2
   end
 
   def sum_of_squares
     array = *(1..@num)
-    sum = array.map! { |n| n**2 }.sum
+    array.map! { |n| n**2 }.sum
   end
 
   def difference
