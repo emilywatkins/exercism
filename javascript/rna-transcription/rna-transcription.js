@@ -9,14 +9,15 @@ DnaTranscriber.prototype.toRna = function (nucleotide) {
     'T': 'A'
   };
 
-  array = nucleotide.split('');
-  transcription = array.map(n => complements[n]);
+  var array = nucleotide.split('');
 
-  if (transcription.includes(undefined)) {
-    throw new Error('Invalid input');
-  } else {
-    return transcription.join('');
-  }
+  array.forEach(function(n) {
+    if (complements.hasOwnProperty(n) === false) {
+      throw new Error('Invalid input');
+    };
+  });
+
+  return array.map(n => complements[n]).join('');
 };
 
 module.exports = DnaTranscriber;
