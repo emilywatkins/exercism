@@ -15,7 +15,7 @@ class Squares
     square_of_sum - sum_of_squares
   end
 
-private
+  private
   def num_array
     (1..@num)
   end
